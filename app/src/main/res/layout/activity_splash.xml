@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#C4F4AE5C">
+    android:background="@color/orange_70">
 
     <ImageView
         android:layout_width="wrap_content"
