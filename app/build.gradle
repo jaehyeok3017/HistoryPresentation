@@ -38,8 +38,8 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
@@ -48,11 +48,34 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:29.2.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-database:20.0.5'
-    implementation("com.tbuonomo:dotsindicator:4.3")
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.6'
-    implementation 'com.google.firebase:firebase-firestore:24.2.0'
-    implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
 
+    /* MVVM */
+    // ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+
+
+    /* firebase */
+    // database
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+
+    // auth
+    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
+
+    // firestore
+    implementation 'com.google.firebase:firebase-firestore:24.4.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
+
+
+    /* else */
+    // dots indicator
+    implementation("com.tbuonomo:dotsindicator:4.3")
+
+    // material
     implementation 'com.google.android.material:material:1.6.1'
+
+    // RecyclerView
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
 }
