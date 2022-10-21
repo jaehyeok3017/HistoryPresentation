@@ -54,7 +54,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
 
     // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 
 
     /* firebase */
@@ -70,6 +70,15 @@ dependencies {
 
 
     /* else */
+    // Activity
+    implementation "androidx.activity:activity-ktx:1.6.0"
+
+    // SplashScreen
+    implementation "androidx.core:core-splashscreen:1.0.0"
+
+    // SwipeRefresh
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
     // dots indicator
     implementation("com.tbuonomo:dotsindicator:4.3")
 
