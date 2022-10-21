@@ -1,4 +1,4 @@
-package com.example.historypresentation
+package com.example.historypresentation.ui.register
 
 import android.content.ContentValues
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.historypresentation.databinding.ActivityRegisterBinding
+import com.example.historypresentation.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import java.util.regex.Pattern
