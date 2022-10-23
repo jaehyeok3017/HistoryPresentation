@@ -11,11 +11,14 @@ import com.example.historypresentation.databinding.ActivityRegisterBinding
 import com.example.historypresentation.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     var auth: FirebaseAuth? = null
+    private lateinit var db : FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +27,8 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(view)
 
         auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
+
         binding.registercomplete.setOnClickListener {
             binding.emailCheckText.visibility = View.INVISIBLE
             binding.passwdCheckText.visibility = View.INVISIBLE
@@ -92,8 +97,22 @@ class RegisterActivity : AppCompatActivity() {
         )
             ?.addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Log.d(ContentValues.TAG, "createUserWithEmail:success")
-                    moveLoginPage(task.result?.user)
+                    val user = hashMapOf(
+                        "user" to binding.registeremail.toString(),
+                        "testMaxScore" to 0,
+                        "testRecentScore" to 0
+                    )
+
+                    db.collection("users")
+                        .document(binding.registeremail.toString())
+                        .set(user)
+                        .addOnSuccessListener { documentReference ->
+                            Log.d(ContentValues.TAG, "유저 정보 업로드 및 회원가입에 성공하였습니다.")
+                            moveLoginPage(task.result?.user)
+                        }
+                        .addOnFailureListener { e ->
+                            Toast.makeText(this, "유저 정보 업로드에 실패했습니다.", Toast.LENGTH_SHORT).show()
+                        }
                 } else if(task.exception?.message.isNullOrEmpty()){
                     Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                 } else {
