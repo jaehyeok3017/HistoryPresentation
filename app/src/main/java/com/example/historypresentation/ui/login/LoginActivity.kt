@@ -7,9 +7,9 @@ import android.text.Editable
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.historypresentation.ui.main.MainActivity
 import com.example.historypresentation.ui.register.RegisterActivity
 import com.example.historypresentation.databinding.ActivityLoginBinding
+import com.example.historypresentation.ui.main.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 

@@ -8,6 +8,9 @@ import com.example.historypresentation.data.repository.LoginRepository
 class LoginViewModel : ViewModel() {
     private val loginRepository = LoginRepository()
 
-    lateinit var idData : LiveData<String>
-    lateinit var pwData : LiveData<String>
+    private val _idData = MutableLiveData<String>("id")
+    val idData : LiveData<String> get() = _idData
+
+    private val _pwData = MutableLiveData<String>("pw")
+    val pwData : LiveData<String> get() = _pwData
 }
