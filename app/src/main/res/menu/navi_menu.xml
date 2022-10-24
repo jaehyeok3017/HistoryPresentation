@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/first"
+        android:id="@+id/nav_study"
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_create_24"
         android:title="학습" />
     <item
-        android:id="@+id/second"
+        android:id="@+id/nav_home"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="홈" />
     <item
-        android:id="@+id/third"
+        android:id="@+id/nav_test"
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_drive_file_rename_outline_24"
