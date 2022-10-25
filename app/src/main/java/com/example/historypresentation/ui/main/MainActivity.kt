@@ -23,18 +23,18 @@ class MainActivity : AppCompatActivity(){
         val view = binding.root
         setContentView(view)
 
-        supportFragmentManager.beginTransaction().add(R.id.layout_nav_bottom, MainFragment()).commit()
+        supportFragmentManager.beginTransaction().add(R.id.fragment, StudyFragment()).commit()
 
         binding.bottomMenu.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.nav_home -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.layout_nav_bottom, MainFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.layout_nav_bottom_main, MainFragment()).commit()
                 }
                 R.id.nav_study -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.layout_nav_bottom, StudyFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.layout_nav_bottom_study, StudyFragment()).commit()
                 }
                 R.id.nav_test -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.layout_nav_bottom, QuizFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.layout_nav_bottom_quiz, QuizFragment()).commit()
                 }
             }
 
