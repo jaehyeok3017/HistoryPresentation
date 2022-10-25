@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">PainfulHistoryOfKorea</string>
+    <string name="study_button_text">민족 운동 연표 확인하기</string>
+    <string name="login_email">이메일</string>
+    <string name="login_password">비밀번호</string>
+    <string name="login_button_text">로그인</string>
+    <string name="register_button_text">회원가입</string>
+    <string name="register_text">회원가입</string>
+    <string name="register_sub_text1">회원가입을 하실</string>
+    <string name="register_sub_text2">정보를 확인해주세요</string>
+    <string name="register_email_hint">이메일을 입력하세요</string>
+    <string name="register_check_text">이메일 형식을 확인해주세요 (aaaa@gmail.com)</string>
+    <string name="register_pw_text">비밀번호를 입력하세요</string>
+    <string name="register_pw_check">특수문자, 영문, 숫자를 조합한 8~10글자로 설정하세요</string>
+    <string name="register_repw_text">비밀번호를 다시 입력하세요</string>
+    <string name="register_repw_check">비밀번호가 일치하지 않습니다</string>
+    <string name="register_btn_complete">완료</string>
 </resources>
