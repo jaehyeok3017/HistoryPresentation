@@ -67,8 +67,4 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(R.layout.fragment_quiz) {
 
         }
     }
-
-    override fun init() {
-
-    }
 }

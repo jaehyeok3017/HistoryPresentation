@@ -7,12 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.setContentView
+import androidx.fragment.app.Fragment
 import com.example.historypresentation.R
+import com.example.historypresentation.databinding.ActivityMainBinding
 import com.example.historypresentation.databinding.FragmentMainBinding
+import com.example.historypresentation.databinding.FragmentQuizBinding
 import com.example.historypresentation.databinding.FragmentStudyBinding
 import com.example.historypresentation.ui.base.BaseFragment
 
 class StudyFragment : BaseFragment<FragmentStudyBinding>(R.layout.fragment_study) {
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,7 +35,4 @@ class StudyFragment : BaseFragment<FragmentStudyBinding>(R.layout.fragment_study
         return binding.root
     }
 
-    override fun init() {
-
-    }
 }

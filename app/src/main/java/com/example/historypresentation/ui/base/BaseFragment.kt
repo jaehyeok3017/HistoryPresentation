@@ -24,8 +24,6 @@ abstract class BaseFragment<D : ViewDataBinding>(@LayoutRes private val layoutRe
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
-        init()
     }
 
-    abstract fun init()
 }

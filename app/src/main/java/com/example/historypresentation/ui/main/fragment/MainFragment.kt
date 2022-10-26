@@ -20,7 +20,4 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
         return binding.root
     }
 
-    override fun init() {
-
-    }
 }
