@@ -28,9 +28,12 @@ class StudyFragment : BaseFragment<FragmentStudyBinding>(R.layout.fragment_study
         binding.scrollHorizontal.isHorizontalScrollBarEnabled = true
         binding.scrollHorizontal.isVerticalScrollBarEnabled = true
 
-        binding.yearChange.setOnClickListener {
-            binding.yearImage.setImageResource(R.drawable.history2)
-        }
+        binding.scrollHorizontal2.isHorizontalScrollBarEnabled = true
+        binding.scrollHorizontal2.isVerticalScrollBarEnabled = true
+
+//        binding.yearChange.setOnClickListener {
+//            binding.yearImage.setImageResource(R.drawable.history2)
+//        }
 
         return binding.root
     }
