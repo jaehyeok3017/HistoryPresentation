@@ -28,12 +28,21 @@ class StudyFragment : BaseFragment<FragmentStudyBinding>(R.layout.fragment_study
         binding.scrollHorizontal.isHorizontalScrollBarEnabled = true
         binding.scrollHorizontal.isVerticalScrollBarEnabled = true
 
-        binding.scrollHorizontal2.isHorizontalScrollBarEnabled = true
-        binding.scrollHorizontal2.isVerticalScrollBarEnabled = true
+        var firstImageSet = true
 
-//        binding.yearChange.setOnClickListener {
-//            binding.yearImage.setImageResource(R.drawable.history2)
-//        }
+        binding.selectImage.setOnClickListener {
+            firstImageSet = when(firstImageSet){
+                true -> {
+                    binding.yearImage.setImageResource(R.drawable.history2)
+                    false
+                }
+
+                else -> {
+                    binding.yearImage.setImageResource(R.drawable.history1)
+                    true
+                }
+            }
+        }
 
         return binding.root
     }

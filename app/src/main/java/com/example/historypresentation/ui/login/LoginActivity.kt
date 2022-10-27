@@ -8,11 +8,15 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.viewModelScope
 import com.example.historypresentation.ui.register.RegisterActivity
 import com.example.historypresentation.databinding.ActivityLoginBinding
 import com.example.historypresentation.ui.main.MainActivity
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -28,12 +32,15 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         binding.loginbtn.setOnClickListener {
             viewModel.login()
-            when(viewModel.status.value){
-                true -> {
-                    moveMainPage(auth?.currentUser)
-                }
 
-                false -> Toast.makeText(this, "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            viewModel.viewModelScope.launch{
+                when(viewModel.status.value){
+                    true -> {
+                        moveMainPage(auth?.currentUser)
+                    }
+
+                    else -> Toast.makeText(this@LoginActivity, "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
